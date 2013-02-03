@@ -134,6 +134,11 @@ if ($get_data['show'] == "metadata") // Raplet metadata query
 
     $json_data = array('html'=>$html, 'css'=>$css, 'js'=>$js, 'status'=>$status);
 
+    $log_this = date("Y-m-d H:i:s") .",". $get_data['name'] .",". $get_data['email'] . "\n";
+
+    file_put_contents("./mylog.txt",  $log_this ,  FILE_APPEND  |  LOCK_EX );
+
+
 
 }
 
